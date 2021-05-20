@@ -1,12 +1,13 @@
 version: 2
 jobs:
   build:
-    docker: circleci/node
-    step:
+    docker: 
+      - image: circleci/node
+    steps:
       - checkout
       - run:
         name: "'run' statements can actually contain a 'name' and 'command' argument as well"
-        command:  
+        command: | 
           echo "You can even have multiline commands."
       - restore_cache:
           keys:
