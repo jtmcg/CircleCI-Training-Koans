@@ -1,9 +1,8 @@
 version: 2
 jobs:
   build:
-    name: build
     docker: circleci/node
-    steps:
+    step:
       - checkout
       - run:
         name: "'run' statements can actually contain a 'name' and 'command' argument as well"
