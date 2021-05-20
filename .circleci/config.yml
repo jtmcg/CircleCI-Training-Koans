@@ -6,12 +6,12 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/ruby:stable
+      - image: cimg/base:stable
     steps:
       - checkout
       # Add step below to install Ruby version 2.3.8
-      - ruby/install:
-          version: '2.3.8'
+      # - ruby/install:
+      #     version: '2.3.8'
       
       - run: ruby -v
 
