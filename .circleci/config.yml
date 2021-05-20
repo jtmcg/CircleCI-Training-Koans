@@ -10,14 +10,14 @@ jobs:
       - restore_cache: # test restore
           name: Restore Yarn Package Json Cache
           keys: 
-            - v1-koan5-cache           
+            - v1-koan5-cache-{{ .BuildNum }}           
       - run:
           name: Install Dependencies
           command: yarn install --immutable
       # Uncomment below and set the key to point to the proper file
       - save_cache:
           name: Save Yarn Package Json Cache
-          key: v1-koan5-cache
+          key: v1-koan5-cache-{{ .BuildNum }}
           paths:
             - ~/.cache/yarn
 
